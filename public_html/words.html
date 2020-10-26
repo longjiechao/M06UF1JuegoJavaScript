@@ -9,8 +9,30 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+        
+        
     </head>
     <body>
-        <div>TODO write content</div>
+        <table>
+            <tr>
+                <script>
+                    var palabra = "hola";
+                    var letra = palabra.split("");
+                    var vacios = new Array(letra.length).fill(0);
+                    
+                    for (i=0;i<letra.length;i++){
+                        document.write("<th>" + letra[i] + "</th>");
+                        document.write("<th>" + vacios[i] + "</th>");
+                    }
+
+                </script>
+            </tr>
+        </table>
     </body>
 </html>
