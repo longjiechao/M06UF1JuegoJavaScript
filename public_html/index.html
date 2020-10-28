@@ -14,11 +14,35 @@ and open the template in the editor.
     <body>
         <div class="container">
             <div class="btncenter">
-                <button class="start">Start</button>
+                <button id="start">Start</button>
                 <br><br>
-                <button class="end">Surrender</button>
+                <button id="end">Surrender</button>
             </div>
         </div>
 
+        <script>
+            var stats;
+            var fight;
+            var words;
+            
+            document.getElementById("start").addEventListener("click", abrirStats);
+            document.getElementById("end").addEventListener("click", abrirFight);
+            document.getElementById("start").addEventListener("click", abrirWords);
+            
+            function abrirStats(){
+                /*abrir una ventana*/
+                stats = window.open("stats.html","Hijo", "top=100, left=800, width=300, height=200"); /*fichero, nombre y tamaño*/
+            }
+            
+            function abrirFight(){
+                fight = window.open("fight.html","Hijo", "top=100, left=800, width=300, height=200");
+            }
+            
+            function abrirWords(){
+                words = window.open("words.html","Hijo", "top=100, left=800, width=300, height=200");
+            }
+            
+            
+        </script>
     </body>
 </html>

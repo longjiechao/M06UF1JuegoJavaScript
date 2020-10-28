@@ -22,13 +22,25 @@ and open the template in the editor.
         <table>
             <tr>
                 <script>
-                    var palabra = "hola";
-                    var letra = palabra.split("");
+                    var test = "a".toUpperCase();
+                    var letra = a().split("");
                     var vacios = new Array(letra.length).fill(0);
+                    var mostrar = new Array(letra.length).fill("?");
                     
                     for (i=0;i<letra.length;i++){
-                        document.write("<th>" + letra[i] + "</th>");
-                        document.write("<th>" + vacios[i] + "</th>");
+                        if (letra[i] == test){
+                            document.write("<th>" + letra[i] + "</th>");
+                        } else {
+                            if (letra[i].includes(" ")){
+                                document.write("<th>" + letra[i] + "</th>");
+                            } else {
+                                if (vacios[i] == 0) {
+                                    document.write("<th>" + mostrar[i] + "</th>");
+                                }else {
+                                    document.write("<th>" + letra[i] + "</th>");
+                                }
+                            }
+                        }
                     }
 
                 </script>
