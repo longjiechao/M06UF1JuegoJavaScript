@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : Sophia Patrice
 */
 
+h1{
+    text-align: center;
+}
+
 .start {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -40,6 +44,12 @@ and open the template in the editor.
     border: 3px solid green;
 }
 
+.containerStats{
+    height: 135px;
+    position: relative;
+    border: 3px solid green;
+}
+
 .btncenter{
     margin: 0;
     position: absolute;
@@ -47,4 +57,34 @@ and open the template in the editor.
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+.columnTwo {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.columnTwo.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.columnThree {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.columnThree.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Fonts in Stats*/
+p.fontsStats {
+  font-size: 20px;
+  padding-left: 10px;
 }
