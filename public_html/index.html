@@ -19,30 +19,37 @@ and open the template in the editor.
                 <button id="end">Surrender</button>
             </div>
         </div>
-
+        <script type="text/javascript" src="data.js"></script>
         <script>
-            var stats;
-            var fight;
             var words;
-            
-            document.getElementById("start").addEventListener("click", abrirStats);
-            document.getElementById("end").addEventListener("click", abrirFight);
+            var fight;
+            var stats;
+
             document.getElementById("start").addEventListener("click", abrirWords);
-            
-            function abrirStats(){
+            document.getElementById("start").addEventListener("click", abrirFight);
+            document.getElementById("start").addEventListener("click", abrirStats);
+            document.getElementById("end").addEventListener("click",cerrar);
+
+            function abrirWords() {
                 /*abrir una ventana*/
-                stats = window.open("stats.html","Hijo", "top=100, left=800, width=300, height=200"); /*fichero, nombre y tamaño*/
+                words = window.open("words.html", "Stats", "top=1000, left=0, width=400, height=200"); /*fichero, nombre y tamaño*/
+            }
+
+            function abrirFight() {
+                fight = window.open("fight.html", "Fight", "top=1000, left=500, width=400, height=200");
+            }
+
+            function abrirStats() {
+                stats = window.open("stats.html", "Words", "top=1000, left=1000, width=400, height=200");
             }
             
-            function abrirFight(){
-                fight = window.open("fight.html","Hijo", "top=100, left=800, width=300, height=200");
+            function cerrar(){
+                words.close();
+                fight.close();
+                stats.close();
             }
-            
-            function abrirWords(){
-                words = window.open("words.html","Hijo", "top=100, left=800, width=300, height=200");
-            }
-            
-            
+
+
         </script>
     </body>
 </html>

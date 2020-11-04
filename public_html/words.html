@@ -21,9 +21,11 @@ and open the template in the editor.
     <body>
         <table>
             <tr>
-                <script>
-                    var test = "a".toUpperCase();
-                    var letra = a().split("");
+                <script type="text/javascript" src="data.js"></script>
+                <script type="text/javascript">
+                    
+                    var test = "a".toUpperCase(); 
+                    var letra = getCookie(palabra[getRandom()]).toUpperCase().split("");
                     var vacios = new Array(letra.length).fill(0);
                     var mostrar = new Array(letra.length).fill("?");
                     
