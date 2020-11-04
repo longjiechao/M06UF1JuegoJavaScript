@@ -25,9 +25,11 @@ and open the template in the editor.
                 <script type="text/javascript">
                     
                     var test = "a".toUpperCase(); 
-                    var letra = getCookie(palabra[getRandom()]).toUpperCase().split("");
+                    var letra = getRandomWord().toUpperCase().split("");
                     var vacios = new Array(letra.length).fill(0);
                     var mostrar = new Array(letra.length).fill("?");
+                    
+                    
                     
                     for (i=0;i<letra.length;i++){
                         if (letra[i] == test){

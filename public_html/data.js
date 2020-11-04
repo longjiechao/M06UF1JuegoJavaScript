@@ -3,18 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var palabra = ["p1", "p2", "p3", "p4", "p5"];
 
-setCookie("p1", "Zorro");
-setCookie("p2", "Tribunal");
-setCookie("p3", "Cachorro");
-setCookie("p4", "Letrado");
-setCookie("p5", "Encadenado");
+var palabras = ["Zorro", "Tribunal", "Cachorro", "Letrado", "Encadenado"];
 
 
-
-function getRandom(){
-    return Math.random() * (5 - 0) + 0 ;
+function getRandomWord(){
+    var cookieRandom = Math.floor((Math.random() * 5) + 1);
+    return  palabras[cookieRandom];
 }
 
 function setCookie(cname, cvalue) {
