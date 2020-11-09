@@ -16,7 +16,7 @@ and open the template in the editor.
             <div class="btncenter">
                 <button id="start">Start</button>
                 <br><br>
-                <button id="end">Surrender</button>
+                <button id="end">Give Up</button>
             </div>
         </div>
         <script type="text/javascript" src="data.js"></script>
@@ -24,13 +24,20 @@ and open the template in the editor.
             var words;
             var fight;
             var stats;
-            var nuevasPalabras = prompt("Introduce las palabras separadas por un ','").replaceAll(" ", "").split(",");
             
-            for (i=0;i<nuevasPalabras.length;i++){
-                document.write("!" + nuevasPalabras[i] + "?");
-            }
+            var palabras = prompt("Introduce las palabras separadas por un ','");
+                    
             
-            addPalabras();
+            
+            show(palabras);
+            
+            
+            sessionStorage.setItem("nuevasPalabras", palabras);
+            
+            
+            
+            
+            
             
             //Acción al clickar
             document.getElementById("start").addEventListener("click", abrirWords);

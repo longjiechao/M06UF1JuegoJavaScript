@@ -4,31 +4,23 @@
  * and open the template in the editor.
  */
 // Palabras por defecto + Selección aleatoria de las palabras
-var palabras = ["Zorro", "Tribunal", "Cachorro", "Letrado", "Encadenado"];
-show();
-function show(){
-    for (i=0;i<palabras.length;i++){
-        document.write(palabras[i]);
+
+
+
+function show(palabra){
+    for (i=0;i<palabra.length;i++){
+        document.write(palabra[i]);
     }
-}
-function getRandomWord(){
-    var cookieRandom = Math.floor((Math.random() * 5) + 1);
-    return  palabras[cookieRandom];
 }
 
-function addPalabras(){
-    palabras.push("hola");
+//coge un array y sali un variable del array, seleccionada de forma aleatoria
+function getRandomWord(arrayP){
+    var pRandom = Math.floor((Math.random() * arrayP.length) + 1);
+    return  arrayP[pRandom];
 }
 
-function getPalabras(num){
-    if (num == -1){
-        return palabras;
-    }
-    else {
-        return palabras[num];
-    }
-    
-}
+
+
 
 
 
