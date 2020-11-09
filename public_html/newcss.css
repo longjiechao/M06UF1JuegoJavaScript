@@ -89,3 +89,19 @@ p.fontsStats {
   padding-left: 10px;
 }
 
+#hp{
+    position: absolute;
+}
+
+
+#centerTable {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*table.example-table {
+  background-image: url("pics/bossbackground.png");
+  width:100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}*/
