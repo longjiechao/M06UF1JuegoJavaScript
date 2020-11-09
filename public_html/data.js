@@ -3,15 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+// Palabras por defecto + Selección aleatoria de las palabras
 var palabras = ["Zorro", "Tribunal", "Cachorro", "Letrado", "Encadenado"];
-
-
+show();
+function show(){
+    for (i=0;i<palabras.length;i++){
+        document.write(palabras[i]);
+    }
+}
 function getRandomWord(){
     var cookieRandom = Math.floor((Math.random() * 5) + 1);
     return  palabras[cookieRandom];
 }
 
+function addPalabras(){
+    palabras.push("hola");
+}
+
+function getPalabras(num){
+    if (num == -1){
+        return palabras;
+    }
+    else {
+        return palabras[num];
+    }
+    
+}
+
+
+
+//Start Cookies
 function setCookie(cname, cvalue) {
   var d = new Date();
   d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
@@ -45,3 +66,4 @@ function checkCookie() {
     }
   }
 } 
+//End Cookies

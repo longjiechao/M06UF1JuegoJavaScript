@@ -24,12 +24,21 @@ and open the template in the editor.
             var words;
             var fight;
             var stats;
-
+            var nuevasPalabras = prompt("Introduce las palabras separadas por un ','").replaceAll(" ", "").split(",");
+            
+            for (i=0;i<nuevasPalabras.length;i++){
+                document.write("!" + nuevasPalabras[i] + "?");
+            }
+            
+            addPalabras();
+            
+            //Acción al clickar
             document.getElementById("start").addEventListener("click", abrirWords);
             document.getElementById("start").addEventListener("click", abrirFight);
             document.getElementById("start").addEventListener("click", abrirStats);
             document.getElementById("end").addEventListener("click",cerrar);
 
+            //Abrir y cerrar ventanas
             function abrirWords() {
                 /*abrir una ventana*/
                 words = window.open("words.html", "Stats", "top=1000, left=0, width=500, height=400"); /*fichero, nombre y tamaño*/
