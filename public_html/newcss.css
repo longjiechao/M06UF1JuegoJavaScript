@@ -25,7 +25,7 @@ h1{
     width: 150%;
 }
 
-#end {
+#end, fight {
     background-color: #f44336; /* Red */
     border: none;
     border-radius: 12px;
