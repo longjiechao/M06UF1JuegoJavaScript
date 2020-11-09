@@ -24,12 +24,15 @@ and open the template in the editor.
                 <script type="text/javascript" src="data.js"></script>
                 <script type="text/javascript">
                     
+                    
                     var test = "a".toUpperCase(); 
                     var letra = getRandomWord().toUpperCase().split("");
                     var vacios = new Array(letra.length).fill(0);
                     var mostrar = new Array(letra.length).fill("?");
                     
-                    
+                    for (i=0;i<getPalabras(-1).length;i++){
+                        document.write("<th>" + getPalabras(i) + "</th>");
+                    }
                     
                     for (i=0;i<letra.length;i++){
                         if (letra[i] == test){
@@ -46,6 +49,13 @@ and open the template in the editor.
                             }
                         }
                     }
+                    var load = 0;
+                    if (load == 0){
+                        load++;
+                    }else {
+                        location.reload()
+                    }
+                    
 
                 </script>
             </tr>
