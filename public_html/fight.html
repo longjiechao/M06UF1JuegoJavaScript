@@ -39,12 +39,34 @@ and open the template in the editor.
                 </tr>
                 </table>
             <div class="btncenter">
-                <button id="end">Fight!</button>
+                <button id="fight">Fight!</button>
             </div>
         </div>
         
        
 
         <script type="text/javascript" src="data.js"></script>
+        <script>
+            document.getElementById("fight").addEventListener("click", fighting);
+            
+            function fighting() {
+                var test = prompt("Introduce una letra").toUpperCase(); 
+            }
+            
+            
+            var nuevaPalabras = sessionStorage.getItem("nuevasPalabras").replaceAll(" ", "").split(",");;
+
+
+
+            
+
+            show(palabras);      
+
+            
+            var letra = getRandomWord(palabras).toUpperCase().split("");
+            var vacios = new Array(letra.length).fill(0);
+            var mostrar = new Array(letra.length).fill("?");
+            var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ ";
+        </script>
     </body>
 </html>

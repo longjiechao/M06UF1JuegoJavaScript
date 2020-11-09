@@ -24,19 +24,14 @@ and open the template in the editor.
             var words;
             var fight;
             var stats;
-            
-            var palabras = prompt("Introduce las palabras separadas por un ','");
-                    
+            var palabras = ["Zorro", "Tribunal", "Cachorro", "Letrado", "Encadenado"];  
+            var nuevaPalabras = prompt("Introduce las palabras separadas por un ','", "Duo Depression").replaceAll(" ", "").split(",");
+                  
+            palabras = palabras.concat(nuevaPalabras);
             
             
             show(palabras);
-            
-            
-            sessionStorage.setItem("nuevasPalabras", palabras);
-            
-            
-            
-            
+            show(getRandomWord(palabras).toUpperCase().split(""));
             
             
             //Acción al clickar
@@ -44,6 +39,13 @@ and open the template in the editor.
             document.getElementById("start").addEventListener("click", abrirFight);
             document.getElementById("start").addEventListener("click", abrirStats);
             document.getElementById("end").addEventListener("click",cerrar);
+            
+            //Al dar click a start, escoge una palabra nueva
+            document.getElementById("start").addEventListener("click",sesionPalabra);
+            
+            function sesionPalabra(){
+                sessionStorage.setItem("nuevasPalabras", getRandomWord(palabras).toUpperCase().split(""));
+            }
 
             //Abrir y cerrar ventanas
             function abrirWords() {

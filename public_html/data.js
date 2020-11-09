@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-// Palabras por defecto + Selección aleatoria de las palabras
 
 
 
+//muestra los arrays, sirve para tests
 function show(palabra){
     for (i=0;i<palabra.length;i++){
-        document.write(palabra[i]);
+        document.write("|" + palabra[i] + " " + i + "| ");
     }
 }
 

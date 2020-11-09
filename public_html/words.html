@@ -26,28 +26,14 @@ and open the template in the editor.
                     
                     
                     var palabras = ["Zorro", "Tribunal", "Cachorro", "Letrado", "Encadenado"];
-                    var nuevaPalabras = sessionStorage.getItem("nuevasPalabras").replaceAll(" ", "").split(",");;
+                    var nuevaPalabras = sessionStorage.getItem("nuevasPalabras");
                     
                     
                     
-                    var palabras = palabras.concat(nuevaPalabras);
                     
-                    //addPalabras(nuevasPalabras);
+                    document.write(nuevaPalabras);      
                     
-                    //function addPalabras(añadir){
-                    //    for (i=0;i<añadir.length;i++){
-                    //      palabras.push(añadir[i]);
-                    //    }
-                    //}
-                    
-                    show(palabras);
-                    
-                    //var palabraElegida = getRandomWord(palabras);
-                    
-                    getRandomWord(palabras)                    
-                    
-                    var test = prompt("Introduce una letra").toUpperCase(); 
-                    var letra = getRandomWord(palabras).toUpperCase().split("");
+                    var letra = nuevaPalabras;
                     var vacios = new Array(letra.length).fill(0);
                     var mostrar = new Array(letra.length).fill("?");
                     var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ ";
