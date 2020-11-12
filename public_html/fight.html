@@ -47,6 +47,10 @@ and open the template in the editor.
 
         <script type="text/javascript" src="data.js"></script>
         <script>
+            var letra = sessionStorage.getItem("pElegida");
+            document.write(letra); 
+            show(letra);
+            
             document.getElementById("fight").addEventListener("click", fighting);
             
             function fighting() {
