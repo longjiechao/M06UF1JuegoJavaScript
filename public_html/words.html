@@ -20,47 +20,25 @@ and open the template in the editor.
     </head>
     <body>
         <table>
-            <tr>
-                <script type="text/javascript" src="data.js"></script>
-                <script type="text/javascript">
-                    
-                    
-                    var palabras = ["Zorro", "Tribunal", "Cachorro", "Letrado", "Encadenado"];
-                    var nuevaPalabras = sessionStorage.getItem("nuevasPalabras");
-                    
-                    
-                    
-                    
-                    document.write(nuevaPalabras);      
-                    
-                    var letra = nuevaPalabras;
-                    var vacios = new Array(letra.length).fill(0);
-                    var mostrar = new Array(letra.length).fill("?");
-                    var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ ";
-                    
-                    
-                    for (i=0;i<letra.length;i++){
-                        if (letra[i] == test){
-                            document.write("<th>" + letra[i] + "</th>");
-                        } else {
-                            if (letra[i].includes(" ")){
-                                document.write("<th>" + letra[i] + "</th>");
-                            } else {
-                                if (vacios[i] == 0) {
-                                    document.write("<th>" + mostrar[i] + "</th>");
-                                }else {
-                                    document.write("<th>" + letra[i] + "</th>");
-                                }
-                            }
-                        }
-                    }
-                    
-                    
-                    
-                    
-
-                </script>
+            <tr> 
+                <th id="letra"></th>
             </tr>
         </table>
+        
+        
+        <script type="text/javascript" src="data.js"></script>
+        <script type="text/javascript">
+            var letra = sessionStorage.getItem("pElegida");
+            document.write(letra); 
+            show(letra);
+
+            var letra = "Test";
+            var vacios = new Array(letra.length).fill(0);
+            var mostrar = new Array(letra.length).fill("?");
+            var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ ";
+
+
+            
+        </script>
     </body>
 </html>

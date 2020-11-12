@@ -25,14 +25,18 @@ and open the template in the editor.
             var fight;
             var stats;
             var palabras = ["Zorro", "Tribunal", "Cachorro", "Letrado", "Encadenado"];  
-            var nuevaPalabras = prompt("Introduce las palabras separadas por un ','", "Duo Depression").replaceAll(" ", "").split(",");
+            var nuevaPalabras = prompt("Introduce las palabras separadas por un ','", "Palabra").replaceAll(" ", "").split(",");
                   
+           //En caso de que no ponga nada, que se añada estas palabras       
+           if (nuevaPalabras == ""){
+               nuevaPalabras = ["Depresión", "Trauma", "Trastorno de estrés postraumático"];
+           }       
             palabras = palabras.concat(nuevaPalabras);
             
+            var elegido = getRandomWord(palabras).toUpperCase();
             
             show(palabras);
-            show(getRandomWord(palabras).toUpperCase().split(""));
-            
+            sessionStorage.setItem("pElegida",elegido);
             
             //Acción al clickar
             document.getElementById("start").addEventListener("click", abrirWords);
