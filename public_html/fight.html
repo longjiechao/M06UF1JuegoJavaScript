@@ -47,6 +47,8 @@ and open the template in the editor.
 
         <script type="text/javascript" src="data.js"></script>
         <script>
+            var fight;
+            //coge la palabra elegida
             var letra = sessionStorage.getItem("pElegida");
             document.write(letra); 
             show(letra);
@@ -54,17 +56,9 @@ and open the template in the editor.
             document.getElementById("fight").addEventListener("click", fighting);
             
             function fighting() {
-                var test = prompt("Introduce una letra").toUpperCase(); 
+                fight = prompt("Introduce una letra").toUpperCase(); 
             }
-            
-            
-            var nuevaPalabras = sessionStorage.getItem("nuevasPalabras").replaceAll(" ", "").split(",");;
-
-
-
-            
-
-            show(palabras);      
+                 
 
             
             var letra = getRandomWord(palabras).toUpperCase().split("");
