@@ -19,11 +19,9 @@ and open the template in the editor.
         
     </head>
     <body>
-        <table>
-            <tr> 
-                <th id="letra"></th>
-            </tr>
-        </table>
+        
+        <div id = "mLetra">
+        </div>
         
         
         <script type="text/javascript" src="data.js"></script>
@@ -32,12 +30,22 @@ and open the template in the editor.
             document.write(letra); 
             show(letra);
 
-            var letra = "Test";
-            var vacios = new Array(letra.length).fill(0);
-            var mostrar = new Array(letra.length).fill("?");
-            var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ ";
-
-
+            //var letra = "Test";
+            addTable(letra);
+            
+            function addTable(letra){
+                var table = document.createElement("table");
+                var tr = document.createElement("tr");
+                for (i=0;i<letra.length;i++){
+                    var th = document.createElement("th");
+                    th.innerText = letra[i];
+                    tr.appendChild(th);
+                }
+                table.appendChild(tr);
+                var mLetra = document.getElementById("mLetra");
+                mLetra.appendChild(table);
+            }
+            
             
         </script>
     </body>
