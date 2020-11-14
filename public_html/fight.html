@@ -57,12 +57,15 @@ and open the template in the editor.
             
             document.getElementById("fight").addEventListener("click", fighting);
             
+            
+            
             function fighting() {
+                addTable(letra);
                 fight = prompt("Introduce una letra").toUpperCase();
                 
                 fight = fight.toUpperCase().replaceAll(" ", "").split("");
                 fight = fight[0];
-                                
+                //Detección de carácteres, si es valido o no, si está repetido o no                
                 if (alphabeta.includes(fight)){
                     if (letrasIntroducidas.includes(fight)){
                         alert("Carácter repetido");
@@ -74,16 +77,23 @@ and open the template in the editor.
                 }else{
                     alert("Carácter invalido");
                 }
-                sessionStorage.setItem("letra", fight);
-                
             }
-                 
-                    
             
-            var letra = getRandomWord(palabras).toUpperCase().split("");
-            var vacios = new Array(letra.length).fill(0);
-            var mostrar = new Array(letra.length).fill("?");
-            var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ";
+            
+            /*function addTable(letra){
+                var words = sessionStorage.getItem("words");
+                alert(words);
+                var table = document.createElement("table");
+                var tr = document.createElement("tr");
+                for (i=0;i<letra.length;i++){
+                    var th = document.createElement("th");
+                    th.innerText = letra[i];
+                    tr.appendChild(th);
+                }
+                table.appendChild(tr);
+                var mLetra = words.document.getElementById("mLetra")
+                mLetra.appendChild(table);
+            }*/
         </script>
     </body>
 </html>
