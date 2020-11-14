@@ -1,0 +1,4 @@
+Hacer que todo este en fight.html
+Acabar botón fight
+	Al pulsar el boton fight que coga la primera letra del prompt y lo ponga en un variable
+	Después, que mire si es una palabra correcta o no, si es si entonces modifica la tabla, si no quitar vida
