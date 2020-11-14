@@ -47,6 +47,7 @@ and open the template in the editor.
 
         <script type="text/javascript" src="data.js"></script>
         <script>
+            var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ";
             var fight;
             //coge la palabra elegida
             var letra = sessionStorage.getItem("pElegida");
@@ -56,15 +57,25 @@ and open the template in the editor.
             document.getElementById("fight").addEventListener("click", fighting);
             
             function fighting() {
-                fight = prompt("Introduce una letra").toUpperCase(); 
+                fight = prompt("Introduce una letra").toUpperCase();
+                
+                fight = fight.toUpperCase().replaceAll(" ", "").split("");
+                fight = fight[0];
+                alert(fight);
+                                
+                if (alphabeta.includes(fight) == false){
+                    alert("Carácter invalido");
+                }
+                sessionStorage.setItem("letra", fight);
+                
             }
                  
-
+                    
             
             var letra = getRandomWord(palabras).toUpperCase().split("");
             var vacios = new Array(letra.length).fill(0);
             var mostrar = new Array(letra.length).fill("?");
-            var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ ";
+            var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ";
         </script>
     </body>
 </html>

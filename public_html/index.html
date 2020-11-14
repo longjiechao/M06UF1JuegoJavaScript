@@ -55,14 +55,17 @@ and open the template in the editor.
             function abrirWords() {
                 /*abrir una ventana*/
                 words = window.open("words.html", "Stats", "top=1000, left=0, width=500, height=400"); /*fichero, nombre y tamaño*/
+                sessionStorage.setItem("words", words);
             }
 
             function abrirFight() {
                 fight = window.open("fight.html", "Fight", "top=1000, left=500, width=500, height=400");
+                sessionStorage.setItem("fight", fight);
             }
 
             function abrirStats() {
                 stats = window.open("stats.html", "Words", "top=1000, left=1000, width=500, height=400");
+                sessionStorage.setItem("stats", stats);
             }
             
             function cerrar(){
