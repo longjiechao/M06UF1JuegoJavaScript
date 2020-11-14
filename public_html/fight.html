@@ -48,6 +48,7 @@ and open the template in the editor.
         <script type="text/javascript" src="data.js"></script>
         <script>
             var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ";
+            var letrasIntroducidas = "";
             var fight;
             //coge la palabra elegida
             var letra = sessionStorage.getItem("pElegida");
@@ -61,9 +62,16 @@ and open the template in the editor.
                 
                 fight = fight.toUpperCase().replaceAll(" ", "").split("");
                 fight = fight[0];
-                alert(fight);
                                 
-                if (alphabeta.includes(fight) == false){
+                if (alphabeta.includes(fight)){
+                    if (letrasIntroducidas.includes(fight)){
+                        alert("Carácter repetido");
+                    }else{
+                        letrasIntroducidas = letrasIntroducidas.concat(fight);
+                        alert(letrasIntroducidas);
+                    }
+                    
+                }else{
                     alert("Carácter invalido");
                 }
                 sessionStorage.setItem("letra", fight);
