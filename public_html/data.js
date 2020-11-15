@@ -69,7 +69,6 @@ function show(palabra){
 //Botones
 
     document.getElementById("start").addEventListener("click", abrirVentanas);
-    document.getElementById("start").addEventListener("click", showStats);
     document.getElementById("end").addEventListener("click",cerrar);
     //Sirve para escribir la letra
     document.getElementById("fight").addEventListener("click", fighting);
@@ -113,6 +112,16 @@ function show(palabra){
         console.log(elegido);
         //en caso de usarlo en otra página
         sessionStorage.setItem("elegido", elegido);
+        alert("5 Segundos de espera por rendir"); 
+        wait();
+        document.getElementById("start").style.visibility = 'hidden';
+        document.getElementById("end").style.visibility = 'hidden';
+        setTimeout(function(){
+            alert("Espera acabada"); 
+            play();
+            document.getElementById("end").style.visibility = 'visible';
+        }, 5000);
+        
         
     }
     
@@ -162,9 +171,15 @@ function show(palabra){
                 lifeCheck(1);
             }
             if (life == 0){
-                fight.document.getElementById("fight").style.visibility = 'hidden';
-                alert("Has perdido esta ronda");
+                alert("Has perdido esta ronda, 10 segundos de espera");
                 wait();
+                    document.getElementById("start").style.visibility = 'hidden';
+                    document.getElementById("end").style.visibility = 'hidden';
+                    setTimeout(function(){
+                        alert("Espera acabada");
+                        play();
+                        document.getElementById("end").style.visibility = 'visible';
+                    }, 5000);
                 modCookie("perdidas",(parseInt(getCookie("perdidas")) + 1));
                 stats.location.reload();
             }
@@ -227,12 +242,11 @@ function show(palabra){
                 }
                 
                 function showStats(){
-                    document.getElementById("jugadas").innerHTML = getCookie("jugadas");
+                    document.getElementById("jugadas").innerText = getCookie("jugadas");
                     document.getElementById("ganadas").innerText = getCookie("ganadas");
                     document.getElementById("perdidas").innerText = getCookie("perdidas");
                     document.getElementById("rendidas").innerText = getCookie("rendidas");
                 }
-                
 //End Functions
 
 
