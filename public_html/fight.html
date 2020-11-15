@@ -60,6 +60,7 @@ and open the template in the editor.
             
             
             function fighting() {
+                rellenar(letra);
                 addTable(letra);
                 fight = prompt("Introduce una letra").toUpperCase();
                 
@@ -79,21 +80,20 @@ and open the template in the editor.
                 }
             }
             
-            
-            /*function addTable(letra){
-                var words = sessionStorage.getItem("words");
-                alert(words);
-                var table = document.createElement("table");
-                var tr = document.createElement("tr");
+            //Escribe las letras
+            function rellenar(letra){
+                var word = sessionStorage.getItem("words");
+                var escribir = "| ";
                 for (i=0;i<letra.length;i++){
-                    var th = document.createElement("th");
-                    th.innerText = letra[i];
-                    tr.appendChild(th);
+                    escribir = escribir.concat(letra[i]," | ");
                 }
-                table.appendChild(tr);
-                var mLetra = words.document.getElementById("mLetra")
-                mLetra.appendChild(table);
-            }*/
+                word.document.getElementById("mLetra").innerText = escribir;
+            }
+            
+            
+
+            
+           
         </script>
     </body>
 </html>

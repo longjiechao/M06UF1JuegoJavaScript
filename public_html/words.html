@@ -20,33 +20,21 @@ and open the template in the editor.
     </head>
     <body>
         
-        <div id = "mLetra">
+        <div>
+            <span id="mLetra">hola</span>
         </div>
         
         
         <script type="text/javascript" src="data.js"></script>
         <script type="text/javascript">
-            var letra = sessionStorage.getItem("pElegida");
-            document.write(letra); 
-            show(letra);
-            
-            //var letra = "Test";
-            addTable(letra);
             
             
-            //Crea una tabla para poner las letras de manera separada
-            function addTable(letra){
-                var table = document.createElement("table");
-                var tr = document.createElement("tr");
-                for (i=0;i<letra.length;i++){
-                    var th = document.createElement("th");
-                    th.innerText = letra[i];
-                    tr.appendChild(th);
-                }
-                table.appendChild(tr);
-                var mLetra = document.getElementById("mLetra");
-                mLetra.appendChild(table);
-            }
+            
+            
+
+            
+            
+            
             
             
         </script>

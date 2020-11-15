@@ -21,60 +21,8 @@ and open the template in the editor.
         </div>
         <script type="text/javascript" src="data.js"></script>
         <script>
-            var words;
-            var fight;
-            var stats;
-            var palabras = ["Zorro", "Tribunal", "Cachorro", "Letrado", "Encadenado"];  
-            var nuevaPalabras = prompt("Introduce las palabras separadas por un ','", "Palabra").replaceAll(" ", "").split(",");
-                  
-           //En caso de que no ponga nada, que se añada estas palabras       
-           if (nuevaPalabras == ""){
-               nuevaPalabras = ["Depresión", "Trauma", "Trastorno de estrés postraumático"];
-           }       
-            palabras = palabras.concat(nuevaPalabras);
-            
-            var elegido = getRandomWord(palabras).toUpperCase();
-            
-            show(palabras);
-            sessionStorage.setItem("pElegida",elegido);
-            
-            //Acción al clickar
-            document.getElementById("start").addEventListener("click", abrirWords);
-            document.getElementById("start").addEventListener("click", abrirFight);
-            document.getElementById("start").addEventListener("click", abrirStats);
-            document.getElementById("end").addEventListener("click",cerrar);
-            
-            //Al dar click a start, escoge una palabra nueva
-            document.getElementById("start").addEventListener("click",sesionPalabra);
-            
-            function sesionPalabra(){
-                sessionStorage.setItem("nuevasPalabras", getRandomWord(palabras).toUpperCase().split(""));
-            }
-
-            //Abrir y cerrar ventanas
-            function abrirWords() {
-                /*abrir una ventana*/
-                words = window.open("words.html", "Stats", "top=1000, left=0, width=500, height=400"); /*fichero, nombre y tamaño*/
-                sessionStorage.setItem("words", words);
-            }
-
-            function abrirFight() {
-                fight = window.open("fight.html", "Fight", "top=1000, left=500, width=500, height=400");
-                sessionStorage.setItem("fight", fight);
-            }
-
-            function abrirStats() {
-                stats = window.open("stats.html", "Words", "top=1000, left=1000, width=500, height=400");
-                sessionStorage.setItem("stats", stats);
-            }
-            
-            function cerrar(){
-                words.close();
-                fight.close();
-                stats.close();
-            }
-
-
+            var nuevaPalabra = prompt("Introduce las palabras separadas por un ','", "Palabra").replaceAll(" ", "").split(",");
+            sessionStorage.setItem("nuevaPalabra", nuevaPalabra);
         </script>
     </body>
 </html>
