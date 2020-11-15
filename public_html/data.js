@@ -56,7 +56,7 @@ if (palabras == ""){
     var life = 6;
     
 //test
-show(palabras);
+//show(palabras);
 
 
 
@@ -87,8 +87,7 @@ function show(palabra){
         modCookie("jugadas",(parseInt(getCookie("jugadas")) + 1));
         elegido = getRandomWord(palabras).toUpperCase().trim();
         play();
-        console.log(elegido);
-        words = window.open("words.html", "Stats", "top=1000, left=0, width=500, height=400");
+        words = window.open("words.html", "Stats", "top=1000, left=0, width=500, height=400");  
         fight = window.open("fight.html", "Fight", "top=1000, left=500, width=500, height=400");
         stats = window.open("stats.html", "Words", "top=1000, left=1000, width=500, height=400");
         //en caso de usarlo en otra página
