@@ -17,12 +17,7 @@ and open the template in the editor.
                 <tr>
                     <th colspan="3">
                         <div id="hp">
-                            <img alt="heart" src="pics/hearts.png"/>
-                            <img alt="heart" src="pics/hearts.png"/>
-                            <img alt="heart" src="pics/hearts.png"/>
-                            <img alt="heart" src="pics/hearts.png"/>
-                            <img alt="heart" src="pics/hearts.png"/>
-                            <img alt="heart" src="pics/hearts.png"/> 
+                            <img id="health" alt="health" src="pics/health/MAXHealth.png">
                         </div>
                     </th>
                 </tr>
@@ -35,65 +30,22 @@ and open the template in the editor.
                     </td>
                     <td>
                         <img id="monstro" alt="Monstro" src="pics/portrait_20.0_monstro.png"/>
+                        <progress id="mHealth"></progress><img alt="monstrobar" src="pics/ui_bosshealthbart.png">
                     </td>
                 </tr>
                 </table>
             <div class="btncenter">
                 <button id="fight">Fight!</button>
             </div>
+            <div>
+                <span id="mLetra"></span>
+            </div>
         </div>
         
        
 
         <script type="text/javascript" src="data.js"></script>
-        <script>
-            var alphabeta = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ";
-            var letrasIntroducidas = "";
-            var fight;
-            //coge la palabra elegida
-            var letra = sessionStorage.getItem("pElegida");
-            document.write(letra); 
-            show(letra);
-            
-            document.getElementById("fight").addEventListener("click", fighting);
-            
-            
-            
-            function fighting() {
-                rellenar(letra);
-                addTable(letra);
-                fight = prompt("Introduce una letra").toUpperCase();
-                
-                fight = fight.toUpperCase().replaceAll(" ", "").split("");
-                fight = fight[0];
-                //Detección de carácteres, si es valido o no, si está repetido o no                
-                if (alphabeta.includes(fight)){
-                    if (letrasIntroducidas.includes(fight)){
-                        alert("Carácter repetido");
-                    }else{
-                        letrasIntroducidas = letrasIntroducidas.concat(fight);
-                        alert(letrasIntroducidas);
-                    }
-                    
-                }else{
-                    alert("Carácter invalido");
-                }
-            }
-            
-            //Escribe las letras
-            function rellenar(letra){
-                var word = sessionStorage.getItem("words");
-                var escribir = "| ";
-                for (i=0;i<letra.length;i++){
-                    escribir = escribir.concat(letra[i]," | ");
-                }
-                word.document.getElementById("mLetra").innerText = escribir;
-            }
-            
-            
+        <script type="text/javascript" src="fight.js"></script>
 
-            
-           
-        </script>
     </body>
 </html>
